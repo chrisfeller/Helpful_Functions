@@ -249,13 +249,15 @@ import imgkit
 
 df_styled = (df.style
                .set_table_styles(
-                 [{'selector': 'tr:nth-of-type(odd)',
-                   'props': [('background', '#eee')]},
-                  {'selector': 'tbody td', 'props': [('font-family', 'arial')]},
-                  {'selector': 'thead', 'props': [('font-family', 'arial')]},
-                  {'selector': 'tr:nth-of-type(even)',
-                   'props': [('background', 'white')]},
-                  {'selector':'th, td', 'props':[('text-align', 'center')]}])
+                   [{'selector': 'tr:nth-of-type(odd)',
+                     'props': [('background', '#eee')]},
+                    {'selector': 'tbody td', 'props': [('font-family', 'futura')]},
+                    {'selector': 'thead', 'props': [('font-family', 'futura')]},
+                    {'selector': 'tr:nth-of-type(even)',
+                     'props': [('background', 'white')]},
+                    {'selector':'th, td', 'props':[('text-align', 'center')]},
+                    {'selector': 'caption', 'props':[("font-size", "130%"),
+                    ('font-family', 'futura')]}])
               .set_properties(subset=['col1'], **{'text-align': 'left'})
               .set_caption('Table Title')
               .hide_index())
