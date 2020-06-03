@@ -241,3 +241,28 @@ t2, p2 = stats.ttest_ind(df['col1'], df['col2'])
 print("t = " + str(round(t2, 4)))
 print("p = " + str(round(p2, 4)))
 ```
+
+### Pandas Styling
+**Tables**
+```
+import imgkit
+
+df_styled = (df.style
+               .set_table_styles(
+                 [{'selector': 'tr:nth-of-type(odd)',
+                   'props': [('background', '#eee')]},
+                  {'selector': 'tbody td', 'props': [('font-family', 'arial')]},
+                  {'selector': 'thead', 'props': [('font-family', 'arial')]},
+                  {'selector': 'tr:nth-of-type(even)',
+                   'props': [('background', 'white')]},
+                  {'selector':'th, td', 'props':[('text-align', 'center')]}])
+              .set_properties(subset=['col1'], **{'text-align': 'left'})
+              .set_caption('Table Title')
+              .hide_index())
+
+html = df_styled.render()
+imgkit.from_string(html, 'table.png',
+                        options={'width': 2925,
+                                'disable-smart-width': '',
+                                'zoom':3.3})
+```
