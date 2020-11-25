@@ -207,6 +207,17 @@ plt.tight_layout()
 plt.show()
 ```
 
+**Change Font Used in Entire Plot**
+```
+plt.rcParams["font.family"] = "monospace"
+```
+
+**Only Plot Integer Tick Marks**
+```
+from matplotlib.ticker import MaxNLocator
+ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+```
+
 ### Calculations
 **Gini Index**
 ```
